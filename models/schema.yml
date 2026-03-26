@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: customers
+    description: '{{ doc("table_customers") }}'
+    columns:
+      - name: customer_id
+        description: Primary key for the customers table.
+        data_tests:
+          - unique
+          - not_null
+      - name: first_order_date
+        description: NULL when a customer has not yet placed an order.
+
+  - name: stg_customers
+    description: '{{ doc("table_stg_customers") }}'
+    columns:
+      - name: customer_id
+        description: Primary key for the staging customers table.
+        data_tests:
+          - unique
+          - not_null
+      - name: first_order_date
+        description: NULL when a customer has not yet placed an order.
+
+  - name: stg_orders
+    description: '{{ doc("table_stg_orders") }}'
+    columns:
+      - name: order_id
+        description: Primary key for the staging orders table.
+        data_tests:
+          - unique
+          - not_null
+      - name: status
+        description: The status of the order.
+        data_tests:
+          - accepted_values:
+              arguments: # available in v1.10.5 and higher. Older versions can set the <argument_name> as the top-level property.
+                values: ['O', 'P', 'F']
+      - name: customer_id
+        description: The ID of the customer who placed the order.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
