@@ -1,0 +1,23 @@
+snowflake_demo:
+  outputs:
+    dev:
+      account: CAYVXUI-CCB29739
+      database: analytics
+      password: i.RSpi-MmuNby8s
+      role: ACCOUNTADMIN
+      schema: dev
+      threads: 4
+      type: snowflake
+      user: anagy66
+      warehouse: compute_wh
+    prod:
+      account: CAYVXUI-CCB29739
+      database: analytics
+      password: i.RSpi-MmuNby8s
+      role: ACCOUNTADMIN
+      schema: prod
+      threads: 4
+      type: snowflake
+      user: anagy66
+      warehouse: compute_wh
+  target: dev

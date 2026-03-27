@@ -1,0 +1,2 @@
+SHOW TABLES IN DATABASE analytics;
+SHOW VIEWS IN DATABASE analytics;
