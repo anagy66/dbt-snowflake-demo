@@ -2,20 +2,20 @@ snowflake_demo:
   outputs:
     dev:
       account: CAYVXUI-CCB29739
-      database: analytics
+      database: analytics_dev
       password: i.RSpi-MmuNby8s
       role: ACCOUNTADMIN
-      schema: dev
+      schema: dbt_demo
       threads: 4
       type: snowflake
       user: anagy66
       warehouse: compute_wh
     prod:
       account: CAYVXUI-CCB29739
-      database: analytics
+      database: analytics_prod
       password: i.RSpi-MmuNby8s
       role: ACCOUNTADMIN
-      schema: prod
+      schema: dbt_demo
       threads: 4
       type: snowflake
       user: anagy66
